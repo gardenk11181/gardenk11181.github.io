@@ -6,13 +6,13 @@
     
 
     
-    <title>Tag: generative model | Garden</title>
+    <title>Tag: gan | Garden</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="Garden">
-<meta property="og:url" content="https://gardenk11181.github.io/tags/generative-model/index.html">
+<meta property="og:url" content="https://gardenk11181.github.io/tags/gan/index.html">
 <meta property="og:site_name" content="Garden">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Jeongwon Kim">
@@ -58,7 +58,11 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
     <div id="wrap">
@@ -143,7 +147,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>generative model</em>
+    <i class="icon fa fa-tag"></i>Tag: <em>gan</em>
     </h1>
 </div>
 
@@ -170,7 +174,7 @@
         <a href="/2021/06/27/Deep-Generative-Model/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(css/images/thumbnail/dcgan.png)" alt="DCGAN - (1) Generative Adversarial Networks" class="thumbnail-image"></span>
     
     
         
@@ -195,12 +199,13 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/27/Deep-Generative-Model/">Deep Generative Model</a>
+        <a href="/2021/06/27/Deep-Generative-Model/">DCGAN - (1) Generative Adversarial Networks</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            인턴 1주차 목표는 pytorch가 제공하는 DCGAN tutorial을 공부해오는 것이었다.디테일한 코드보다는 용어의 의미와 전체적인 흐름 및 이론에 주목하여 살펴보도록 하자.
+GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminator로 이루어진 Adversarial Networks로,
         </p>
     </div>
 </article>
@@ -250,7 +255,7 @@
                             <a href="/2021/06/27/Deep-Generative-Model/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(css/images/thumbnail/dcgan.png)" alt="DCGAN - (1) Generative Adversarial Networks" class="thumbnail-image"></span>
     
     
 </a>
@@ -259,7 +264,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/InternShip/">InternShip</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/InternShip/ai/">ai</a></p>
-                            <p class="item-title"><a href="/2021/06/27/Deep-Generative-Model/" class="title">Deep Generative Model</a></p>
+                            <p class="item-title"><a href="/2021/06/27/Deep-Generative-Model/" class="title">DCGAN - (1) Generative Adversarial Networks</a></p>
                             <p class="item-date"><time datetime="2021-06-27T03:46:33.000Z" itemprop="datePublished">2021-06-27</time></p>
                         </div>
                     </li>
@@ -293,7 +298,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/generative-model/" rel="tag">generative model</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gan/" rel="tag">gan</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -303,7 +308,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/ai/" style="font-size: 10px;">ai</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/generative-model/" style="font-size: 10px;">generative model</a>
+            <a href="/tags/ai/" style="font-size: 10px;">ai</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/gan/" style="font-size: 10px;">gan</a>
         </div>
     </div>
 
@@ -421,6 +426,23 @@
 
 <script src="/js/main.js"></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 </html>
