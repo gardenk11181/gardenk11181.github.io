@@ -6,16 +6,25 @@
     
 
     
-    <title>Category: DCGAN | Garden</title>
+    <title>DCGAN - (5) Discriminator 구현 | Garden</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Garden">
-<meta property="og:url" content="https://gardenk11181.github.io/categories/AI/DCGAN/index.html">
+    <meta name="keywords" content="ai,deep learning,gan" />
+    
+    <meta name="description" content="Previous Article: DCGAN - (4) Architecture">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DCGAN - (5) Discriminator 구현">
+<meta property="og:url" content="https://gardenk11181.github.io/2021/07/06/dcgan-05/index.html">
 <meta property="og:site_name" content="Garden">
+<meta property="og:description" content="Previous Article: DCGAN - (4) Architecture">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-06T02:50:33.000Z">
+<meta property="article:modified_time" content="2021-07-06T02:51:18.000Z">
 <meta property="article:author" content="Jeongwon Kim">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="gan">
 <meta name="twitter:card" content="summary">
     
 
@@ -147,274 +156,169 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">DCGAN</em>
+    <a class="page-title-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/AI/DCGAN/">DCGAN</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-dcgan-05" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2021" class="archive-year"><i class="icon fa fa-calendar-o"></i>2021</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/07/06/dcgan-05/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/07/06/dcgan-05/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-07-06T02:50:33.000Z" itemprop="datePublished">2021-07-06</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2021/07/06/dcgan-05/">DCGAN - (5) Discriminator 구현</a>
+        DCGAN - (5) Discriminator 구현
         </h1>
     
 
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (4) Architecture
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/07/06/dcgan-05/" class="article-date">
+       <time datetime="2021-07-06T02:50:33.000Z" itemprop="datePublished">2021-07-06</time>
+    </a>
+  </div>
 
-        </p>
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/07/06/dcgan-05/" class="article-date">
+     <time datetime="2021-07-06T02:51:18.000Z" itemprop="dateModified">2021-07-06</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/ai/" rel="tag">ai</a>, <a class="tag-link-link" href="/tags/deep-learning/" rel="tag">deep learning</a>, <a class="tag-link-link" href="/tags/gan/" rel="tag">gan</a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/07/02/dcgan-04/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/07/02/dcgan-04/">0</span>
-    
-</span>
+                
 
+                
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
             </div>
-            <div class="date"><time datetime="2021-07-02T01:00:00.000Z" itemprop="datePublished">2021-07-02</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/07/02/dcgan-04/">DCGAN - (4) Generator 구현</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            
 
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (3) Architecture
-pytorch tutorial에서 제시한 celebA데이터의 경우에는 크기가 제법 되기에 1차적인 목표는 MNIST 데이터를 통해 구현해보는 것이다. MNIST data를 pytorch로 가져오는 방법은 여기, MNIST data에 대한 DCGAN model은 여기에 나와있다.
-A
-        </p>
+            
+
+            
+
+            <p><a href="../../../06/30/dcgan-03">Previous Article: DCGAN - (4) Architecture</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://gardenk11181.github.io/2021/07/06/dcgan-05/" data-id="ckqrgg33w0000l581a3q25zwo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jeongwon Kim"
+        },
+        "headline": "DCGAN - (5) Discriminator 구현",
+        "image": "https://gardenk11181.github.io",
+        "keywords": "ai deep learning gan",
+        "genre": "AI DCGAN",
+        "datePublished": "2021-07-06",
+        "dateCreated": "2021-07-06",
+        "dateModified": "2021-07-06",
+        "url": "https://gardenk11181.github.io/2021/07/06/dcgan-05/",
+        "description": "Previous Article: DCGAN - (4) Architecture
+",
+        "wordCount": 7
+    }
+</script>
+
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/06/30/dcgan-03/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan_training.png)" alt="DCGAN - (3) Training" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/06/30/dcgan-03/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-06-30T01:33:35.000Z" itemprop="datePublished">2021-06-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/30/dcgan-03/">DCGAN - (3) Training</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (2) Architecture
-이번 글에서는 DCGAN의 학습과정을 다뤄보자. 지금까지 그래왔듯이 pytorch구현을 위한 기술적인 부분은 미뤄두고, 개념만 다뤄볼 것이다.
-기본적으로 Stochastic Gradient Descent(SGD)방법을 기반으로 하는 Adam Optimizer를 사용한다. SGD방법
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/06/29/dcgan-02/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan_generator.png)" alt="DCGAN - (2) Architecture" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/06/29/dcgan-02/">0</span>
-    
-</span>
 
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-06-29T04:06:09.000Z" itemprop="datePublished">2021-06-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/29/dcgan-02/">DCGAN - (2) Architecture</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (1) Generative Adversarial Networks
-이번 글에서는 DCGAN이 어떠한 Architecture을 가지는지 알아보자.
-기본적으로는 Deep Neural Network의 한 종류인 CNN(Convolutional Neural Network)의 구조를 가진다. DCGAN의 CNN은 Conv
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/06/27/dcgan-01/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan.png)" alt="DCGAN - (1) Generative Adversarial Networks" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/06/27/dcgan-01/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-06-27T03:46:33.000Z" itemprop="datePublished">2021-06-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/27/dcgan-01/">DCGAN - (1) Generative Adversarial Networks</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            인턴 1주차 목표는 pytorch가 제공하는 DCGAN tutorial을 공부해오는 것이었다. 디테일한 코드보다는 용어의 의미와 전체적인 흐름 및 이론에 주목하여 살펴보도록 하자.
-GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminator로 이루어진 Adversarial Networks로
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
 
@@ -436,6 +340,19 @@ GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminato
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/07/02/dcgan-04/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">DCGAN - (4) Generator 구현</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -647,11 +564,13 @@ GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminato
     var disqus_shortname = 'https-gardenk11181-github-io';
     
     
+    var disqus_url = 'https://gardenk11181.github.io/2021/07/06/dcgan-05/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

@@ -6,7 +6,7 @@
     
 
     
-    <title>DCGAN - (4) Implementation of Network for Generator | Garden</title>
+    <title>DCGAN - (4) Generator 구현 | Garden</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -14,13 +14,13 @@
     
     <meta name="description" content="Previous Article: DCGAN - (3) Architecture pytorch tutorial에서 제시한 celebA데이터의 경우에는 크기가 제법 되기에 1차적인 목표는 MNIST 데이터를 통해 구현해보는 것이다. MNIST data를 pytorch로 가져오는 방법은 여기, MNIST data에 대한 DCGAN model은 여기에 나와있다. A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DCGAN - (4) Implementation of Network for Generator">
+<meta property="og:title" content="DCGAN - (4) Generator 구현">
 <meta property="og:url" content="https://gardenk11181.github.io/2021/07/02/dcgan-04/index.html">
 <meta property="og:site_name" content="Garden">
 <meta property="og:description" content="Previous Article: DCGAN - (3) Architecture pytorch tutorial에서 제시한 celebA데이터의 경우에는 크기가 제법 되기에 1차적인 목표는 MNIST 데이터를 통해 구현해보는 것이다. MNIST data를 pytorch로 가져오는 방법은 여기, MNIST data에 대한 DCGAN model은 여기에 나와있다. A">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-02T01:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-02T07:45:29.535Z">
+<meta property="article:modified_time" content="2021-07-07T06:47:40.912Z">
 <meta property="article:author" content="Jeongwon Kim">
 <meta property="article:tag" content="ai">
 <meta property="article:tag" content="deep learning">
@@ -168,7 +168,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        DCGAN - (4) Implementation of Network for Generator
+        DCGAN - (4) Generator 구현
         </h1>
     
 
@@ -188,7 +188,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/07/02/dcgan-04/" class="article-date">
-     <time datetime="2021-07-02T07:45:29.535Z" itemprop="dateModified">2021-07-02</time>
+     <time datetime="2021-07-07T06:47:40.912Z" itemprop="dateModified">2021-07-07</time>
   </a>
 </div>
 
@@ -225,8 +225,8 @@
 <p>이 때, in_channel: 100, out_channel: 256, kernel size: 7, stride: 1의 convolutional transpose layer를 이용한다. pytorch는 tensorflow처럼 output shape의 크기에 맞게 알아서 padding을 넣어주지 않기 때문에 직접 padding 값을 계산해야 한다. 이는 convolutional layer의 원리에 대한 이해가 필요하다. (조만간 자세하게 다루는 글을 작성할 것이다.)</p>
 <p><strong>두번째 layer</strong>에서는 in_channel: 256, out_channel: 128, kernel size: 5, stride: 1, padding: 2의 convolutional transpose layer를 이용하여 7X7X128 feature maps을 만든다.</p>
 <p><strong>세번째 layer</strong>에서는 위 모델과 조금 다르게 진행할 수밖에 없었다. pytorch에서 Conv2DTranspose layer의 원리 상, stride가 2이고 kernel size가 홀수일 때 width와 height이 짝수인 feature map을 만들지 못한다. 이는 tensorflow와 달리 pytorch에서는 asymmetric padding을 주지 못하기 때문이다.</p>
-<p>따라서 kernel size를 1이 작은 4로 설정하는 것으로 절충하였다. 즉, in_channel: 128, out_channel: 64, kernel size: 4, stride: 2, padding: 1의 convolutional transpose layer를 이용하여 14X14X64 feature maps을 만들었다.</p>
-<p><strong>마지막 layer</strong>에서도 마찬가지 이유로 in_channel: 64, out_channel: 1, kernel size: 4, stride: 2, padding: 1의 convolutional transpose layer를 이용하여 28X28X1 feature maps(fake image)를 만들었다.</p>
+<p>따라서 kernel size 5는 유지하되, output_padding을 1만큼 줌으로써 절충하였다. 즉, in_channel: 128, out_channel: 64, kernel size: 5, stride: 2, padding: 2, output_padding: 1의 convolutional transpose layer를 이용하여 14X14X64 feature maps을 만들었다.</p>
+<p><strong>마지막 layer</strong>에서도 마찬가지 이유로 in_channel: 64, out_channel: 1, kernel size: 5, stride: 2, padding: 2, output_padding: 1의 convolutional transpose layer를 이용하여 28X28X1 feature maps(fake image)를 만들었다.</p>
 <p>최종 코드는 아래와 같다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Generator(nn.Module):</span><br><span class="line">  def __init__(self, ngpu):</span><br><span class="line">    super(Generator, self).__init__()</span><br><span class="line">    self.ngpu = ngpu</span><br><span class="line">    self.main = nn.Sequential(</span><br><span class="line">        nn.ConvTranspose2d(100,256,7,1,0,bias=False),</span><br><span class="line">        nn.BatchNorm2d(256),</span><br><span class="line">        nn.LeakyReLU(True),</span><br><span class="line"></span><br><span class="line">        nn.ConvTranspose2d(256,128,5,1,2,bias=False),</span><br><span class="line">        nn.BatchNorm2d(128),</span><br><span class="line">        nn.LeakyReLU(True),</span><br><span class="line"></span><br><span class="line">        nn.ConvTranspose2d(128,64,4,2,1,bias=False),</span><br><span class="line">        nn.BatchNorm2d(64),</span><br><span class="line">        nn.LeakyReLU(True),</span><br><span class="line"></span><br><span class="line">        nn.ConvTranspose2d(64,1,4,2,1,bias=False),</span><br><span class="line">        nn.Tanh()</span><br><span class="line">    )</span><br><span class="line">  def forward(self, input):</span><br><span class="line">    return self.main(input)</span><br></pre></td></tr></table></figure>
 <p>어쩌다 보니 글이 길어졌기에, Discriminator network와 학습결과는 다음 글에서 이어나가도록 하겠다.</p>
@@ -307,18 +307,18 @@
             "@type": "Person",
             "name": "Jeongwon Kim"
         },
-        "headline": "DCGAN - (4) Implementation of Network for Generator",
+        "headline": "DCGAN - (4) Generator 구현",
         "image": "https://gardenk11181.github.io",
         "keywords": "ai deep learning gan",
         "genre": "AI DCGAN",
         "datePublished": "2021-07-02",
         "dateCreated": "2021-07-02",
-        "dateModified": "2021-07-02",
+        "dateModified": "2021-07-07",
         "url": "https://gardenk11181.github.io/2021/07/02/dcgan-04/",
         "description": "Previous Article: DCGAN - (3) Architecture
 pytorch tutorial에서 제시한 celebA데이터의 경우에는 크기가 제법 되기에 1차적인 목표는 MNIST 데이터를 통해 구현해보는 것이다. MNIST data를 pytorch로 가져오는 방법은 여기, MNIST data에 대한 DCGAN model은 여기에 나와있다.
 A",
-        "wordCount": 604
+        "wordCount": 608
     }
 </script>
 
@@ -359,6 +359,16 @@ A",
         
 <nav id="article-nav">
     
+        <a href="/2021/07/06/dcgan-05/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            DCGAN - (5) Discriminator 구현
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2021/06/30/dcgan-03/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -384,6 +394,26 @@ A",
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2021/07/06/dcgan-05/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a></p>
+                            <p class="item-title"><a href="/2021/07/06/dcgan-05/" class="title">DCGAN - (5) Discriminator 구현</a></p>
+                            <p class="item-date"><time datetime="2021-07-06T02:50:33.000Z" itemprop="datePublished">2021-07-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2021/07/02/dcgan-04/" class="thumbnail">
     
     
@@ -396,7 +426,7 @@ A",
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a></p>
-                            <p class="item-title"><a href="/2021/07/02/dcgan-04/" class="title">DCGAN - (4) Implementation of Network for Generator</a></p>
+                            <p class="item-title"><a href="/2021/07/02/dcgan-04/" class="title">DCGAN - (4) Generator 구현</a></p>
                             <p class="item-date"><time datetime="2021-07-02T01:00:00.000Z" itemprop="datePublished">2021-07-02</time></p>
                         </div>
                     </li>
@@ -470,7 +500,7 @@ A",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/DCGAN/">DCGAN</a><span class="category-list-count">4</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/DCGAN/">DCGAN</a><span class="category-list-count">5</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -480,7 +510,7 @@ A",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -490,7 +520,7 @@ A",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gan/" rel="tag">gan</a><span class="tag-list-count">4</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gan/" rel="tag">gan</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
