@@ -6,17 +6,28 @@
     
 
     
-    <title>Tag: gan | Garden</title>
+    <title>VAE - (1) Auto-Encoding Variational Bayes | Garden</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Garden">
-<meta property="og:url" content="https://gardenk11181.github.io/tags/gan/index.html">
+    <meta name="keywords" content="ai,deep learning,vae" />
+    
+    <meta name="description" content="어쩌다 보니 인턴을 시작한지 한달이 지났다. 그동안 VAE, WAE 등의 Auto Encoder모델을 공부하였는데, 이번 글에서는 내가 주로 맡은 VAE에 대해 적어보고자 한다.   Auto Encoder는 주어진 이미지를 낮은 차원의 latent vector로 mapping하는 Encoder와, 이 latent vector를 다시 주어진 이미지와 비슷한">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VAE - (1) Auto-Encoding Variational Bayes">
+<meta property="og:url" content="https://gardenk11181.github.io/2021/08/06/vae-01/index.html">
 <meta property="og:site_name" content="Garden">
+<meta property="og:description" content="어쩌다 보니 인턴을 시작한지 한달이 지났다. 그동안 VAE, WAE 등의 Auto Encoder모델을 공부하였는데, 이번 글에서는 내가 주로 맡은 VAE에 대해 적어보고자 한다.   Auto Encoder는 주어진 이미지를 낮은 차원의 latent vector로 mapping하는 Encoder와, 이 latent vector를 다시 주어진 이미지와 비슷한">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gardenk11181.github.io/css/images/vae/auto_encoder_schema.png">
+<meta property="article:published_time" content="2021-08-06T05:48:08.000Z">
+<meta property="article:modified_time" content="2021-08-09T03:20:57.939Z">
 <meta property="article:author" content="Jeongwon Kim">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="vae">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gardenk11181.github.io/css/images/vae/auto_encoder_schema.png">
     
 
     
@@ -147,273 +158,175 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>gan</em>
+    <a class="page-title-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/AI/VAE/">VAE</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-vae-01" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2021" class="archive-year"><i class="icon fa fa-calendar-o"></i>2021</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/07/06/dcgan-05/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan_mnist_result.png)" alt="DCGAN - (5) Discriminator 구현 및 학습 결과" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/07/06/dcgan-05/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-07-06T02:50:33.000Z" itemprop="datePublished">2021-07-06</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2021/07/06/dcgan-05/">DCGAN - (5) Discriminator 구현 및 학습 결과</a>
+        VAE - (1) Auto-Encoding Variational Bayes
         </h1>
     
 
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (4) Generator 구현
-tensorflow tutorial에서 제시하는 Discriminator Architecture는 좀 더 간단하며, 총 세가지의 layer로 이루어져 있다. Generator와 다르게 크기를 줄여나가야 하므로 일반적인 convolutional layer를 사용한다. tensorfl
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/08/06/vae-01/" class="article-date">
+       <time datetime="2021-08-06T05:48:08.000Z" itemprop="datePublished">2021-08-06</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/08/06/vae-01/" class="article-date">
+     <time datetime="2021-08-09T03:20:57.939Z" itemprop="dateModified">2021-08-09</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/ai/" rel="tag">ai</a>, <a class="tag-link-link" href="/tags/deep-learning/" rel="tag">deep learning</a>, <a class="tag-link-link" href="/tags/vae/" rel="tag">vae</a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/07/02/dcgan-04/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/07/02/dcgan-04/">0</span>
-    
-</span>
+                
 
+                
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
             </div>
-            <div class="date"><time datetime="2021-07-02T01:00:00.000Z" itemprop="datePublished">2021-07-02</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/07/02/dcgan-04/">DCGAN - (4) Generator 구현</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            
 
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (3) Architecture
-pytorch tutorial에서 제시한 celebA데이터의 경우에는 크기가 제법 되기에 1차적인 목표는 MNIST 데이터를 통해 구현해보는 것이다. MNIST data를 pytorch로 가져오는 방법은 여기, MNIST data에 대한 DCGAN model은 여기에 나와있다.
-A
-        </p>
+            
+
+            
+
+            <p>어쩌다 보니 인턴을 시작한지 한달이 지났다. 그동안 VAE, WAE 등의 Auto Encoder모델을 공부하였는데, 이번 글에서는 내가 주로 맡은 VAE에 대해 적어보고자 한다.  </p>
+<p><strong>Auto Encoder</strong>는 주어진 이미지를 낮은 차원의 latent vector로 mapping하는 <strong>Encoder</strong>와, 이 latent vector를 다시 주어진 이미지와 비슷한 이미지로 mapping하는 <strong>Decoder</strong>로 이루어진 Neural Network이다. 모델을 잘 학습시킨다면 낮은 차원의 vector만을 가지고도 본래의 고용량 이미지를 만들 수도 있고, 임의의 vector를 가지고 새로운 이미지를 생성할 수도 있다. 전자와 후자를 각각 <strong>reconstruction</strong>과 <strong>generation</strong>라고 한다.</p>
+<p><img src="../../../../css/images/vae/auto_encoder_schema.png" alt="Schema of Auto Encoder (출처: wikipedia)"></p>
+<p>예를 들자면, AI에서 자주 등장하는 <strong>28X28 MNIST</strong>데이터를 학습시킨다고 가정해보자. 첫째로, 주어진 784차원의 이미지를 8차원의 vector로 mapping할 수 있으며(encoding), 이 vector만을 가지고 본래의 이미지와 비슷한 이미지를 만들어낼 수 있다(decoding). 둘째로는, 임의의 8차원 vector로 새로운 손글씨 숫자 이미지를 생성할 수 있는 것이다.</p>
+<p>이러한 Auto Encoder의 종류는 대개 <strong>loss function</strong>을 어떻게 정의하냐에 따라 나뉜다. <strong>VAE</strong>의 경우에는 decoder에서 해당 데이터가 나올 확률의 log값의 lower bound와, encoder에서의 posterior분포와 실제 posterior분포의 KL-Divergence값의 차로 정의된다. 이렇게 정의하게 된 배경과 이론에 대해서는 VAE 마지막 글에서 다뤄보도록 하겠다.</p>
+<p>다음 글에서는 VAE에 사용되는 <strong>Architecture</strong>에 대하여 알아보자.</p>
+<p><a href="../../../08/09/vae-02">Next Article: VAE - (2) Architecture</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://gardenk11181.github.io/2021/08/06/vae-01/" data-id="ckrzxfvbg0000fwf28ijtcolq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jeongwon Kim"
+        },
+        "headline": "VAE - (1) Auto-Encoding Variational Bayes",
+        "image": "https://gardenk11181.github.io../../../../css/images/vae/auto_encoder_schema.png",
+        "keywords": "ai deep learning vae",
+        "genre": "AI VAE",
+        "datePublished": "2021-08-06",
+        "dateCreated": "2021-08-06",
+        "dateModified": "2021-08-09",
+        "url": "https://gardenk11181.github.io/2021/08/06/vae-01/",
+        "description": "어쩌다 보니 인턴을 시작한지 한달이 지났다. 그동안 VAE, WAE 등의 Auto Encoder모델을 공부하였는데, 이번 글에서는 내가 주로 맡은 VAE에 대해 적어보고자 한다.  
+Auto Encoder는 주어진 이미지를 낮은 차원의 latent vector로 mapping하는 Encoder와, 이 latent vector를 다시 주어진 이미지와 비슷한 ",
+        "wordCount": 169
+    }
+</script>
+
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/06/30/dcgan-03/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan_training.png)" alt="DCGAN - (3) Training" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/06/30/dcgan-03/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-06-30T01:33:35.000Z" itemprop="datePublished">2021-06-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/30/dcgan-03/">DCGAN - (3) Training</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (2) Architecture
-이번 글에서는 DCGAN의 학습과정을 다뤄보자. 지금까지 그래왔듯이 pytorch구현을 위한 기술적인 부분은 미뤄두고, 개념만 다뤄볼 것이다.
-기본적으로 Stochastic Gradient Descent(SGD)방법을 기반으로 하는 Adam Optimizer를 사용한다. SGD방법
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/06/29/dcgan-02/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan_generator.png)" alt="DCGAN - (2) Architecture" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/06/29/dcgan-02/">0</span>
-    
-</span>
 
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-06-29T04:06:09.000Z" itemprop="datePublished">2021-06-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/29/dcgan-02/">DCGAN - (2) Architecture</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Previous Article: DCGAN - (1) Generative Adversarial Networks
-이번 글에서는 DCGAN이 어떠한 Architecture을 가지는지 알아보자.
-기본적으로는 Deep Neural Network의 한 종류인 CNN(Convolutional Neural Network)의 구조를 가진다. DCGAN의 CNN은 Conv
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/06/27/dcgan-01/" class="thumbnail">
-    
-    
-        <span style="background-image:url(../../../../css/images/dcgan/dcgan.png)" alt="DCGAN - (1) Generative Adversarial Networks" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://gardenk11181.github.io/2021/06/27/dcgan-01/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI/">AI</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/AI/DCGAN/">DCGAN</a>
-            </div>
-            <div class="date"><time datetime="2021-06-27T03:46:33.000Z" itemprop="datePublished">2021-06-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/06/27/dcgan-01/">DCGAN - (1) Generative Adversarial Networks</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            인턴 1주차 목표는 pytorch가 제공하는 DCGAN tutorial을 공부해오는 것이었다. 디테일한 코드보다는 용어의 의미와 전체적인 흐름 및 이론에 주목하여 살펴보도록 하자.
-GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminator로 이루어진 Adversarial Networks로
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </section>
 
 
 
@@ -435,6 +348,19 @@ GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminato
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/07/06/dcgan-05/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">DCGAN - (5) Discriminator 구현 및 학습 결과</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -646,11 +572,13 @@ GAN (Generative Adversarial Networks)먼저, GAN이란 Generator와 Discriminato
     var disqus_shortname = 'https-gardenk11181-github-io';
     
     
+    var disqus_url = 'https://gardenk11181.github.io/2021/08/06/vae-01/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
